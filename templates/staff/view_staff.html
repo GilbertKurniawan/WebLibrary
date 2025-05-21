@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Data | Library TJG</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff2.css') }}">
+</head>
+<body>
+  {% extends "staff/layout.html" %}
+  {% block body %}
+  <div class= "box-container">
+  <div class="container">
+    <h1>Staff</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Username</th>
+          <th>Nama</th>
+          <th>Jabatan</th>
+        </tr>
+      </thead>
+      {% for i in range(n): %}
+      <tbody>
+        <tr>
+          <td>{{i+1}}</td>
+          <td>{{data[i][0]}}</td>
+          <td>{{data[i][1]}}</td>
+          <td>{{data[i][2]}}</td>
+          
+        </tr>
+        <!-- Tambahkan entri lain di sini -->
+      </tbody>
+      {% endfor %}
+    </table>
+
+  </div>
+  </div>
+  {% endblock %}
+    
+</body>
+</html>

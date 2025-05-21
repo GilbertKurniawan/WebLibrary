@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_guest.css') }}">
+
+    <title>Home Page | Library TJG</title>
+</head>
+<body>
+
+    {% extends "guest/layout.html" %}
+    {% block body %}
+
+    
+    <div class="genre-boxes">
+        <a href="/kategori/Karya Umum" class="genre-box">
+            <img src="{{ url_for('static', filename='kesusastraan.png') }}" alt="Karya Umum">
+            <p>Karya Umum</p>
+        </a>
+        <a href="/kategori/Sosial" class="genre-box">
+            <img src="{{ url_for('static', filename='ilmu_ilmu_sosial.png') }}" alt="Sosial">
+            <p>Sosial</p>
+        </a>
+        <a href="/kategori/Ilmu Pengetahuan" class="genre-box">
+            <img src="{{ url_for('static', filename='ilmu_ilmu_terapan.png') }}" alt="Ilmu Pengetahuan">
+            <p>Ilmu Pengetahuan</p>
+        </a>
+        <a href="/kategori/Sains" class="genre-box">
+            <img src="{{ url_for('static', filename='kesenian_hiburan_olahraga.png') }}" alt="Sains">
+            <p>Sains</p>
+        </a>
+        <a href="/kategori/Agama" class="genre-box">
+            <img src="{{ url_for('static', filename='religion.png') }}" alt="Agama">            
+            <p>Agama</p>
+        </a>
+    </div>
+    <div class="genre-boxes">
+        <a href="/kategori/Seni" class="genre-box">
+            <img src="{{ url_for('static', filename='bahasa.png') }}" alt="Seni">
+            <p>Seni</p>
+        </a>
+        <a href="/kategori/Filsafat" class="genre-box">
+            <img src="{{ url_for('static', filename='filsafat.png') }}" alt="Filsafat">
+            <p>Filsafat</p>
+        </a>
+        <a href="/kategori/Sejarah" class="genre-box">
+            <img src="{{ url_for('static', filename='geografi_sejarah.png') }}" alt="Geografi dan Sejarah">
+            <p>Sejarah</p>
+        </a>
+        <a href="/kategori/Teknologi" class="genre-box">
+            <img src="{{ url_for('static', filename='ilmu_ilmu_murni.png') }}" alt="Teknologi">
+            <p>Teknologi</p>
+        </a>
+    </div>
+
+    {% endblock %}
+    
+</body>
+</html>

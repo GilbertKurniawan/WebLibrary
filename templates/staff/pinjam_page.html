@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peminjaman</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff3.css') }}">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container-header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href='/admin/homepage'>Home</a></li>
+                    <li><a href='/admin/buku'>Books</a></li>
+                    <li><a href='/admin/register_member'>Registrasi Member</a></li>
+                    <li><a href='/admin/register_staff'>Registrasi Staff</a></li>
+                    <li><a href='/admin/riwayat'>Riwayat</a></li>
+                    <li><a href='/admin/view_member'>View Member</a></li>
+                    <li><a href='/admin/view_staff'>View Staff</a></li>
+                    <li><a href='/admin/logout'>Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <div class="large-container">
+    <div class= "box-container">
+        <div class="container">
+            <h1>Form Peminjaman Buku</h1>
+            <form action="/admin/submit_peminjaman" method="get">
+                <div class="form-group">
+                    <label for="ID_Anggota">ID Anggota</label>
+                    <input type="text" name="ID_Anggota" class="form-control" placeholder="Masukkan ID Anggota">
+                </div>
+
+                <div class="form-group">
+                    <label for="Kode Buku">Kode Buku</label>
+                    <input type="text" name="Kode_buku" class="form-control" placeholder="Masukkan Kode Buku">
+                </div>
+
+                <div class="form-group">
+                    <label for="nama">Tanggal peminjaman    :</label>
+                    <input type="text" name="tanggal_peminjaman" class="form-control" value= {{tanggal_peminjaman}}>
+                </div>
+
+                <div class="form-group">
+                    <label for="nama">Tanggal pengembalian  :</label>
+                    <input type="text" name="tanggal_pengembalian" class="form-control" value= {{tanggal_pengembalian}}>
+                </div>
+                {% block body %}
+                {% endblock %}
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

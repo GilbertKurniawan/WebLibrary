@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaksi Perpustakaan</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff2.css') }}">
+</head>
+<body>
+  {% extends "staff/layout.html" %}
+  {% block body %}
+  <div class= "box-container">
+  <div class="container">
+    <h1>Transaksi Perpustakaan</h1>
+
+
+    <form>
+      <input type="text" id="searchInput" placeholder="Cari ID Anggota atau Nama...">
+    </form>
+
+
+    <form action="/admin/pinjam" method="POST">
+      <div class="button-container">
+        <button class="btn btn-primary">Pinjam</button>
+      </div> 
+    </form>
+     
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID Transaksi</th>
+          <th>ID Anggota</th>
+          <th>Nama</th>
+          <th>Kode Buku</th>
+          <th>Tanggal Peminjaman</th>
+          <th>Harus Pengembalian</th>
+          <th>Denda</th>
+          <th>Tindakan</th>
+        </tr>
+      </thead>
+        {% for i in range(n): %}
+      <tbody>
+
+        <tr>
+          <td>{{data_transaksi[i][0]}}</td>
+          <td>{{data_transaksi[i][1]}}</td>
+          <td>{{data_transaksi[i][2]}}</td>
+          <td>{{data_transaksi[i][3]}}</td>
+          <td>{{data_transaksi[i][4]}}</td>
+          <td>{{data_transaksi[i][5]}}</td>
+          <td>{{denda[i]}}</td>
+          <td>
+            <form action="/admin/perpanjang/{{data_transaksi[i][0]}}" method="POST">
+              <div class="button-container2">
+                <button class="btn btn-primary">Perpanjang</button>
+              </div> 
+            </form>
+
+            <form action="/admin/pengembalian/{{data_transaksi[i][0]}}" method="POST">
+              <div class="button-container2">
+                <button class="btn btn-primary">Kembalikan</button>
+              </div> 
+            </form>
+
+          </td>
+        </tr>
+        <!-- Tambahkan entri lain di sini -->
+      </tbody>
+      {% endfor %}
+    </table>
+
+  </div>
+  </div>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const tableRows = document.querySelectorAll('table tbody tr');
+
+    searchInput.addEventListener('input', function () {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      tableRows.forEach(row => {
+        const idAnggota = row.querySelectorAll('td')[1].textContent.toLowerCase();
+        const nama = row.querySelectorAll('td')[2].textContent.toLowerCase();
+
+        if (idAnggota.includes(searchTerm) || nama.includes(searchTerm)) {
+          row.style.display = 'table-row';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  {% endblock %}
+   
+</body>
+</html>

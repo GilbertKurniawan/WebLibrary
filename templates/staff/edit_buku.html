@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Data Buku</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff3.css') }}">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container-header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href='/admin/homepage'>Home</a></li>
+                    <li><a href='/admin/buku'>Books</a></li>
+                    <li><a href='/admin/register_member'>Registrasi Member</a></li>
+                    <li><a href='/admin/register_staff'>Registrasi Staff</a></li>
+                    <li><a href='/admin/riwayat'>Riwayat</a></li>
+                    <li><a href='/admin/view_member'>View Member</a></li>
+                    <li><a href='/admin/view_staff'>View Staff</a></li>
+                    <li><a href='/admin/logout'>Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <div class="large-container">
+    <div class= "box-container">
+        <div class="container">
+            <h1>Form Edit Data Buku</h1>
+            <form action="{{ url_for('submit_edit_buku', kode_buku=Kode_buku) }}" method="get">
+                <div class="form-group custom-dropdown">
+                    <label for="Available">Available</label>
+                    <div class="dropdown">
+                        <select name="available" id="available" class="form-control">
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
+                        </select>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                </div>
+                        
+
+                {% block body %}
+                {% endblock %}
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+      
+</body>
+</html>

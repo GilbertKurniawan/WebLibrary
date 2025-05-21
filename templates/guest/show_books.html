@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_guest.css') }}">
+
+    <title>Menampilkan daftar buku | Library TJG</title>
+</head>
+<body>
+
+    {% extends "guest/layout.html" %}
+    {% block body %}
+
+    {% for i in range(n): %}
+    <div class="container-books">
+        <div class="book-box">
+            <img src="{{ url_for('static', filename='book.png') }}" alt="Gambar Buku">
+            <div class="container-text-books">
+                <h2>{{data_buku[i][3]}}</h2>
+                <p>Penulis: {{data_buku[i][2]}}</p>
+                <h4>{{data_buku[i][1]}}</h4> 
+                {% if data_buku[i][4] == 'NO' %}
+                    <h5>Buku sedang dipinjam</h5> 
+                {% endif %}
+                <!-- Informasi lainnya tentang buku -->
+            </div>
+            
+        </div>
+    </div>
+    {% endfor %}
+
+    {% endblock %}
+    
+</body>
+</html>

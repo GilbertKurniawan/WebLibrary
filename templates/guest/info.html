@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_guest.css') }}">
+
+    <title>Info | Library TJG</title>
+</head>
+<body>
+
+    {% extends "guest/layout.html" %}
+    {% block body %}
+
+    <div class="contact-container">
+        <h1 class="contact-heading">Informasi Kontak</h1>
+        <div class="contact-info">
+            <p class="contact-address">
+                <span class="contact-label">Alamat:</span><br>
+                Calvin Institute of Technology<br>
+                Calvin Tower RMCI Jl. Industri Blok B14,<br>
+                RW.10, East Pademangan, Kemayoran, Central<br>
+                Jakarta City, Jakarta 10610
+            </p>
+            <p class="contact-phone">
+                <span class="contact-label">Nomor Telepon:</span> 0800 1225846
+            </p>
+        </div>
+        <div class="opening-hours">
+            <h2 class="hours-heading">Jam Operasional</h2>
+            <p class="day">Senin - Jumat</p>
+            <p class="hours">Buka: 09.00 Pagi</p>
+            <p class="hours">Istirahat: 12.00 - 13.00 Siang</p>
+            <p class="hours">Tutup: 21.00 Malam</p>
+        </div>
+    </div>
+
+
+    {% endblock %}
+    
+</body>
+</html>

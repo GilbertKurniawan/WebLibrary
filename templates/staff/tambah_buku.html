@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Buku</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff3.css') }}">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container-header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href='/admin/homepage'>Home</a></li>
+                    <li><a href='/admin/buku'>Books</a></li>
+                    <li><a href='/admin/register_member'>Registrasi Member</a></li>
+                    <li><a href='/admin/register_staff'>Registrasi Staff</a></li>
+                    <li><a href='/admin/riwayat'>Riwayat</a></li>
+                    <li><a href='/admin/view_member'>View Member</a></li>
+                    <li><a href='/admin/view_staff'>View Staff</a></li>
+                    <li><a href='/admin/logout'>Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <div class="large-container">
+    <div class= "box-container">
+        <div class="container">
+            <h1>Form Tambah Buku</h1>
+            <form action="/admin/submit_tambah_buku" method="get">
+                <div class="form-group">
+                    <label for="Kode_buku">Kode buku</label>
+                    <input type="text" name="Kode_buku" class="form-control" placeholder="Masukkan Kode Buku">
+                </div>
+
+                <div class="form-group">
+                    <label for="Kategori">Kategori</label>
+                    <input type="text" name="kategori" class="form-control" placeholder="Masukkan Kategori">
+                </div>
+
+                <div class="form-group">
+                    <label for="Penulis">Penulis</label>
+                    <input type="text" name="penulis" class="form-control" placeholder="Masukkan Penulis">
+                </div>
+
+                <div class="form-group">
+                    <label for="Judul">Judul</label>
+                    <input type="text" name="judul" class="form-control" placeholder="Masukkan Judul">
+                </div>
+
+                <div class="form-group">
+                    <label for="Available">Available</label>
+                    <select name="available" class="form-control">
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                    </select>
+                </div>
+
+                {% block body %}
+                {% endblock %}
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+* {
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+}
+    
+/* Gaya header */
+.main-header {
+    background-color: #574D37;
+    color: #D7B171;
+    padding: 30px 0;
+}
+
+.container-header, footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #574D37;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.main-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #D7B171;
+    font-weight: bold;
+}
+
+/* Efek hover pada tautan navigasi */
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.container_transaksi {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top :20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .dropdown {
+    display: inline-block;
+    margin: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  /* Desain ketika dropdown dipilih */
+  select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+/* Gaya footer */
+.main-footer {
+    background-color: #574D37;
+    color: #D7B171;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.main-footer p {
+    margin: 0;
+}
+
+/* Gaya tautan pada footer (opsional) */
+.main-footer a {
+    color: #D7B171;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 576px) {
+    .main-nav ul {
+        text-align: center;
+        line-height: 2em;
+        font-size: x-large;
+
+    }
+
+    .main-nav ul li {
+        /* Sesuaikan tampilan untuk item daftar navigasi pada layar kecil di sini */
+        display: block; /* Atur item daftar navigasi untuk ditampilkan sebagai blok */
+        margin-bottom: 10px; /* Berikan jarak antara item daftar navigasi */
+        line-height: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .main-nav ul {
+        text-align: center;
+        line-height: 2em;
+        margin: 10px;
+        font-size: large;
+    }
+}

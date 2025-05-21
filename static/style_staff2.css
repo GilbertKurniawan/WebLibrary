@@ -1,0 +1,184 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Style Container */
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    color: black;
+    border-radius: 5px;
+}
+
+/* Style Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.table th, .table td {
+    border: 2px solid rgb(204, 202, 202);
+    padding: 10px;
+    text-align: left;
+}
+
+.table td:nth-child(4), .table td:nth-child(7) {
+    min-width: 120px; 
+}
+
+.table th {
+    background-color: #574D37;
+    color: white;
+    font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style Tindakan */
+.table td input[type="radio"] {
+    display: none;
+}
+
+.table td label {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #1cac28;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #06c510;
+}
+
+.table td label:hover {
+    background-color: #cdd5d6;
+    color: #fff;
+}
+
+/* Style Buttons */
+.button-container {
+    text-align: right;
+    margin: 20px;
+}
+
+
+.button-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0056b3;
+    color: white;
+}
+
+.button-container button:hover {
+    background-color: #99a4afbe;
+}
+
+.button-container2 {
+    text-align: right;
+    margin: 5px;
+}
+
+.button-container2 button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #00b31e;
+    color: white;
+}
+
+.button-container2 button:hover {
+    background-color: #99a4afbe;
+}
+
+html, body {
+    height: 100%;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    background: white;
+    overflow-x: auto; /* Tambahkan overflow-x untuk mengaktifkan bilah geser horizontal */
+}
+
+/* Style Form Input */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3ac219;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style Search Button */
+.button-container button#searchButton {
+    margin-left: 10px;
+}
+
+/* Style Form Input Radio */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        max-width: 900px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        background: white;
+        color: black;
+        border-radius: 5px;
+    }
+    .box-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        padding-top: 120px;
+        padding-left: 0;
+    }
+
+    /* Style untuk elemen pencarian */
+    input#searchInput {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+  
+    /* Style untuk tabel */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    
+    /* Style untuk baris yang disembunyikan */
+    table tbody tr[style="display: none"] {
+        display: none;
+    }
+  
+      
+}

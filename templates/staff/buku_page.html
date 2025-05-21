@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books | Library TJG</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff2.css') }}">
+</head>
+<body>
+  {% extends "staff/layout.html" %}
+  {% block body %}
+  <div class= "box-container">
+    <div class="container">
+      <h1>Data Buku</h1>
+      <div>
+        <form action="/admin/tambah_buku" method="POST">
+          <div class="button-container">
+            <button class="btn btn-primary">Tambah Buku</button>
+          </div> 
+        </form>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Kode Buku</th>
+            <th>Judul</th>
+            <th>Penulis</th>
+            <th>Kategori</th>
+            <th>Available</th>
+            <th>Tindakan</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for i in range(n): %}
+          <tr>
+            <td>{{i+1}}</td>
+            <td>{{data_buku[i][0]}}</td>
+            <td>{{data_buku[i][1]}}</td>
+            <td>{{data_buku[i][2]}}</td>
+            <td>{{data_buku[i][3]}}</td>
+            <td>{{data_buku[i][4]}}</td>
+            <td>
+              <form action="/admin/edit_buku/{{data_buku[i][0]}}" method="POST">
+                <div class="button-container2">
+                  <button class="btn btn-primary">Edit</button>
+                </div> 
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+          <!-- Tambahkan entri lain di sini -->
+        </tbody>
+      </table>
+      
+    </div>
+    </div>
+  {% endblock %}
+</body>
+</html>

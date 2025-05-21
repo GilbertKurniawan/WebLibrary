@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Library TJG</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_staff3.css') }}">
+    </head>
+
+    <body>
+        <header class="main-header">
+            <div class="container-header">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href='/admin/homepage'>Home</a></li>
+                        <li><a href='/admin/buku'>Books</a></li>
+                        <li><a href='/admin/register_member'>Registrasi Member</a></li>
+                        <li><a href='/admin/register_staff'>Registrasi Staff</a></li>
+                        <li><a href='/admin/riwayat'>Riwayat</a></li>
+                        <li><a href='/admin/view_member'>View Member</a></li>
+                        <li><a href='/admin/view_staff'>View Staff</a></li>
+                        <li><a href='/'>Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        {% block body %}
+            Jika Tidak Di Inject, Saya muncul
+        {% endblock %}
+
+        <footer class="main-footer">
+            <div class="container-footer">
+                <p>&copy; 2023 Library TJG. Hak cipta dilindungi.</p>
+            </div>
+        </footer>
+
+    </body>
+</html>
